@@ -5,20 +5,32 @@ import org.springframework.stereotype.*;
 
 import FCAI.FawrySystemApi.User.*;
 
-//@Component
+@Component
 public class SignController {
 	Sign sign = new Sign();
-	Vector<Integer>LoginUsersId = new Vector<Integer> ();
+	Vector<Integer>LoginUsersId ;
 	//Vector<User>users = new ;
+	public SignController()
+	{
+		LoginUsersId = new Vector<Integer> ();
+	}
 	public User signIn(String userName,String password) {
 		User user;
 		user =search(userName,password);
-		LoginUsersId .add(user.getID());
+		System.out.println("id"+user.getID());
+		if(user!=null)
+		{
+			System.out.println("befor"+LoginUsersId.size());
+			LoginUsersId .add(user.getID());
+			System.out.println("aft"+LoginUsersId.size());
+		}
+			
 		return user;
 
 	}
 	public boolean chekLogIn(int id)
 	{
+		System.out.println("ch"+LoginUsersId.size());
 		for(int i=0;i<LoginUsersId.size();i++)
 		{
 			if(LoginUsersId.get(i)==id)
@@ -29,14 +41,17 @@ public class SignController {
 	}
 
 	public User search(String userName,String password) {
-		
+		//System.out.println(sign.users.size());
 		if(sign.users != null ) 
 		{
+			//System.out.println("1");
 			for(int i=0;i< sign.users.size();i++)
 			{
+				//System.out.println(sign.users.get(i).getUserName()+" "+sign.users.get(i).getPassword()+" "+userName+" "+password);
 			
 				if(sign.users.get(i).getUserName().equals(userName) && sign.users.get(i).getPassword().equals(password))
 				{
+					//System.out.println("2");
 					//System.out.println(sign.users.get(i).getUserName() + sign.users.get(i).getPassword());
 					return sign.users.get(i);
 				}

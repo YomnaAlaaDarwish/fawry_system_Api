@@ -6,12 +6,22 @@ import FCAI.FawrySystemApi.User.User;
 
 @RestController
 public class SignEndPoint {
-	SignController signController=new SignController();
-	//@PathVariable("id") int id 
-	@GetMapping("/s")
-	public String signin(@RequestBody User user)
+	SignController signController;
+	
+	public  SignEndPoint() 
 	{
-		return user.getUserName();
+		 signController=new SignController();
+	}
+	@GetMapping("/signin/{UserName}/{password}")
+	public String signin(@PathVariable("UserName") String name,@PathVariable("password")String password)
+	{
+		User user=null;
+		user=signController.signIn(name,password);
+		
+		if(user!=null)
+			return "Welcome "+user.getUserName()+"your id is:"+user.getID()+" you will need to path it in the url later";
+			
+		return " oops! we are not found you can you sign up ?or try again";
 	}
 	
 }

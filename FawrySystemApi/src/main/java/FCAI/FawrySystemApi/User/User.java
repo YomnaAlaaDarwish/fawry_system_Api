@@ -61,6 +61,10 @@ public class User {
 	{
 		 email=s;
 	}
+	public void setId(int i)
+	{
+		 id=i;
+	}
 	
 	public void increaseTimesOfPay() {
 		timesOfPay++;
