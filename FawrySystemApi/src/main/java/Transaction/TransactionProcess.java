@@ -1,4 +1,5 @@
 import java.util.Vector;
+import Services.*;
 
 public class TransactionProcess {
 	IPayment payment;
@@ -48,13 +49,7 @@ public class TransactionProcess {
 	}
 	public void handel_transaction(Command c) {
 		
-		//provider_control.executeHandler(transinfo, payHistory);
 		c.execute();
-		/*public void executeHandler(TransactionInfo transinfo,PaymentHistory history) {
-			p.command=new AddTransaction(transinfo,history);
-			p.command.execute();
-			
-		}*/
 			
 	}
 	
@@ -62,6 +57,8 @@ public class TransactionProcess {
 		TransactionInfo transinfo=new TransactionInfo( id, servicename, providername, paymentmethod, payamount,answer);
 		return transinfo;
 	}
+	
+	
 }
 
 

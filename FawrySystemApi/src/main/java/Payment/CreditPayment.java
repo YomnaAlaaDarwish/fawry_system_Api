@@ -1,3 +1,4 @@
+package Payment;
 
 public class CreditPayment implements IPayment {
 

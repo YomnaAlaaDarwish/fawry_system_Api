@@ -32,6 +32,10 @@ public class User {
 	{
 		return timesOfPay;
 	}
+	public int getID()
+	{
+		return id;
+	}
 	public String getPassword()
 	{
 		return password;
