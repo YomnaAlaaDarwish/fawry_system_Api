@@ -1,17 +1,19 @@
 package FCAI.FawrySystemApi.Transaction;
 import java.util.Vector;
 
+import FCAI.FawrySystemApi.Payment.*;
 import FCAI.FawrySystemApi.Services.*;
+import FCAI.FawrySystemApi.User.Wallet;
 
 public class TransactionProcess {
 	IPayment payment;
 	AllServicesController all_service_control;
 	public TransactionProcess() {
-		all_service_control = new AllServicesController();
-		
+		//all_service_control = new AllServicesController();
+		all_service_control=AllServicesController.getInstance();
 	}
 	public Vector<Service> get_services(){
-		return all_service_control.allService.services;
+		return all_service_control.getAllService();
 	}
 	
 	public Service choose_Service(String serviceName) {

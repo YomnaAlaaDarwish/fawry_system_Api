@@ -1,5 +1,8 @@
 package FCAI.FawrySystemApi.Discount;
 
+import FCAI.FawrySystemApi.Services.Service;
+import FCAI.FawrySystemApi.User.User;
+
 public class TotalDiscount {
 	int timeOfPay;
 	double amount;

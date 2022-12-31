@@ -10,7 +10,8 @@ public class SignEndPoint {
 	
 	public  SignEndPoint() 
 	{
-		 signController=new SignController();
+		 //signController=new SignController();
+		signController=SignController.getInstance();
 	}
 	@GetMapping("/signin/{UserName}/{password}")
 	public String signin(@PathVariable("UserName") String name,@PathVariable("password")String password)

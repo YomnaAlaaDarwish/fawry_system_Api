@@ -1,6 +1,9 @@
 package FCAI.FawrySystemApi.Admin;
 import java.util.Vector;
 
+import FCAI.FawrySystemApi.Refund.RefundRequestController;
+import FCAI.FawrySystemApi.Services.*;
+
 public class Admin {
 	RefundRequestController refundRequestController;
 	

@@ -9,6 +9,7 @@ public class AllService {
     {
         if (obj==null)
             obj = new AllService();
+        
         return obj;
     }
 	public void AddService(Service s){

@@ -1,6 +1,8 @@
 package FCAI.FawrySystemApi.Services;
 import java.util.Vector;
 
+import FCAI.FawrySystemApi.Transaction.Command;
+
 public class Provider {
 	Command command;
 	String name;

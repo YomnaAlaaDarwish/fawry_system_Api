@@ -11,7 +11,7 @@ public class AWEndPoint {
 	@PostMapping("/addToWallet/{id}/{fund}")
 	public String add_wallet(@PathVariable("id") int id,@PathVariable("fund") double fund )
 	{
-		return handel.addWalletTransaction(5,fund);
+		return handel.addWalletTransaction(id,fund);
 	}
 	
 }

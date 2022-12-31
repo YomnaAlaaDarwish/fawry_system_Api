@@ -15,13 +15,18 @@ public class HandellAddToWallet {
 	public HandellAddToWallet()
 	{
 		 walletHistory=new WalletHistory();
-		 signController=new SignController();
+		 //signController=new SignController();
+		 signController=SignController.getInstance();
 	}
 	public String addWalletTransaction(int id,double x)
 	{
-		boolean loged=signController.chekLogIn(id);
+		if(x<=0)
+			return "You can not add 0 or negative value";
+		boolean loged=signController.checkLogIn(id);
+		//System.out.println(loged);
 		if(loged)
 		{
+			System.out.println("i reach");
 			IPayment payment=new CreditPayment();
 			User user=signController.searchById(id);
 			payment.pay(x);

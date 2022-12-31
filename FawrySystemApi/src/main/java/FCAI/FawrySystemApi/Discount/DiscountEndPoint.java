@@ -10,7 +10,8 @@ public class DiscountEndPoint {
 	TotalDiscount totalDIscount;
 	
 	public  DiscountEndPoint() {
-		allServicesController =new AllServicesController();
+		//allServicesController =new AllServicesController();
+		allServicesController.getInstance();
 		totalDIscount=new TotalDiscount();
 	}
 	

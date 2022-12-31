@@ -1,4 +1,7 @@
 package FCAI.FawrySystemApi.Payment;
+
+import FCAI.FawrySystemApi.User.Wallet;
+
 public class WalletPayment implements IPayment {
 	Wallet wallet;
 	
