@@ -2,7 +2,9 @@ package FCAI.FawrySystemApi.Services;
 
 import java.util.Vector;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class AllServicesController {
 	
     AllService allService = AllService.getInstance();
