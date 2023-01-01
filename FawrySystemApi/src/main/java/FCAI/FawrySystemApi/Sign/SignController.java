@@ -12,7 +12,7 @@ public class SignController {
 	Vector<Integer>LoginUsersId;
 	//Vector<User>users = new ;
 	private static SignController obj;
-	private SignController() 
+	public SignController() 
 	{
 		sign = new Sign();
 		LoginUsersId = new Vector<Integer> ();

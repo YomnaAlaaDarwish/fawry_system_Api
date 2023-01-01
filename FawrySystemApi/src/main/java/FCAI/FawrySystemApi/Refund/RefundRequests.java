@@ -1,6 +1,8 @@
 package FCAI.FawrySystemApi.Refund;
 import java.util.*;
 
+import FCAI.FawrySystemApi.Transaction.TransactionInfo;
+
 public class RefundRequests {
 	 Vector<TransactionInfo>refundRequestList=new Vector();
 	 private static RefundRequests obj;
