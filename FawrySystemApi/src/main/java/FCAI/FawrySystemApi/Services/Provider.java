@@ -23,6 +23,10 @@ public class Provider {
 		return accept_cash;
 	}
 	
+	public Vector<String> getForm()
 	
+	{
+		return form;
+	}
 
 }

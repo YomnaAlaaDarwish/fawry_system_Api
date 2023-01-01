@@ -34,5 +34,14 @@ public class SignEndPoint {
 			return "Welcome "+user.getUserName()+"your id is:"+user.getID()+" you will need to path it in the url later";
 			
 	}
+	@PostMapping("/logout/{id}")
+	public String User_logout(@PathVariable("id") int id)
+	{
+		if(signController.logout(id))
+			return"see you soon :)";
+		
+			return "you cannot logout because you dont log in";
+			
+	}
 	
 }

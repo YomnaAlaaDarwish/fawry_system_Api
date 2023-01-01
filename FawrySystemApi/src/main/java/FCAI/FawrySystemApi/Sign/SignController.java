@@ -92,5 +92,15 @@ public class SignController {
 		}
     	return null;
     }
+    public boolean logout(int id)
+    {
+    	User s=searchById(id);
+    	if(s!=null)
+    	{
+    		LoginUsersId.removeElement(id);
+    		return true;
+    	}
+    	return false;
+    }
     
 }
