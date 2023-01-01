@@ -3,6 +3,7 @@ import java.util.*;
 
 import org.springframework.stereotype.*;
 
+import FCAI.FawrySystemApi.Admin.Admin;
 import FCAI.FawrySystemApi.Services.AllServicesController;
 import FCAI.FawrySystemApi.User.*;
 
@@ -10,12 +11,14 @@ import FCAI.FawrySystemApi.User.*;
 public class SignController {
 	Sign sign ;
 	Vector<Integer>LoginUsersId;
+	Vector<Integer>LoginAdminId;
 	//Vector<User>users = new ;
 	private static SignController obj;
 	private SignController() 
 	{
 		sign = new Sign();
 		LoginUsersId = new Vector<Integer> ();
+		LoginAdminId = new Vector<Integer> ();
 	}
 	public static SignController getInstance()
     {
@@ -40,6 +43,41 @@ public class SignController {
 		return user;
 
 	}
+	// maram
+	public Admin signInAdmin(String userName,String password) {
+		Admin admin;
+		admin = searchAdmin(userName,password);
+		if(admin != null)
+		{
+				if(!checkLogInAdmin(admin.getID())) {
+				LoginAdminId.add(admin.getID());
+			}
+		}
+		return admin;
+	}
+	public boolean checkLogInAdmin(int id)
+	{
+		for(int i=0;i<LoginAdminId.size();i++)
+		{
+			if(LoginAdminId.get(i)==id)
+				return true;	
+		}
+		return false;
+	}
+	public Admin searchAdmin(String userName,String password) {
+		if(sign.admins != null ) 
+		{
+			for(int i=0;i< sign.admins.size();i++)
+			{
+				if(sign.admins.get(i).getUserName().equals(userName) && sign.admins.get(i).getPassword().equals(password))
+				{
+					return sign.admins.get(i);
+				}
+			}
+		}
+		return null;
+	}
+	////
 	public boolean checkLogIn(int id)
 	{
 		//System.out.println("ch"+LoginUsersId.size());
@@ -92,5 +130,7 @@ public class SignController {
 		}
     	return null;
     }
-    
+    public Sign getsign(){
+		return sign;
+	}
 }

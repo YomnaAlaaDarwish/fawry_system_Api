@@ -123,5 +123,13 @@ public class AllServicesController {
 	{
 		return allService.services;
 	}
-	
+	/// Maram
+	public String CheckDiscountOnService(String name) {
+		Service s = search(name);
+		if(s != null) {
+			return s.CheckSpecificDiscount();
+		}
+		return "There is not service with this name";
+		
+	}
 }

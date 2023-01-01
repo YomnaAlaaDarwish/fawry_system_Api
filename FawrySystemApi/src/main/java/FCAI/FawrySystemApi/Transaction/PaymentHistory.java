@@ -2,7 +2,7 @@ package FCAI.FawrySystemApi.Transaction;
 import java.util.*;
 
 public class PaymentHistory {
-	Vector<TransactionInfo>transactionInfo =new Vector();
+	Vector<TransactionInfo> transactionInfo = new Vector();
 	private static PaymentHistory obj;
 	private PaymentHistory() {}
 	public static PaymentHistory getInstance()
@@ -23,7 +23,10 @@ public class PaymentHistory {
 		return transactionInfo.remove(trans);
 	}
 	
-	
+	public Vector <TransactionInfo> getVectorTransactionInfo()
+    {
+        return transactionInfo;
+    }
 	
 	
 }

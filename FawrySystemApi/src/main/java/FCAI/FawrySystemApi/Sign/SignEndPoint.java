@@ -2,6 +2,7 @@ package FCAI.FawrySystemApi.Sign;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import FCAI.FawrySystemApi.Admin.Admin;
 import FCAI.FawrySystemApi.User.User;
 
 @RestController
@@ -33,6 +34,19 @@ public class SignEndPoint {
 		
 			return "Welcome "+user.getUserName()+"your id is:"+user.getID()+" you will need to path it in the url later";
 			
+	}
+	
+	// Maram
+	@GetMapping("/signInAdmin/{UserName}/{password}")
+	public String signInAdmin(@PathVariable("UserName") String name,@PathVariable("password")String password)
+	{
+		Admin admin=null;
+		admin = signController.signInAdmin(name,password);
+		
+		if(admin!=null)
+			return "Welcome "+admin.getUserName()+"your id is:"+admin.getID()+" you will need to path it in the url later";
+			
+		return " oops! we are not found you can you sign up ?or try again";
 	}
 	
 }

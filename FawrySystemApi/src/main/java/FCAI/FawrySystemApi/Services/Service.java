@@ -48,6 +48,12 @@ public class Service {
 		SetCost(discountvalue);
 		
 	}
+	// check discount Maram
+	public String CheckSpecificDiscount() {
+		if(specieficDiscount == 0.0) {
+			return "This service have not Specific Discount";
+		}
+		return "This service have Specific Discount" + specieficDiscount;
 		
-
+	}
 }

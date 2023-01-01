@@ -11,7 +11,7 @@ public class DiscountEndPoint {
 	
 	public  DiscountEndPoint() {
 		//allServicesController =new AllServicesController();
-		allServicesController.getInstance();
+		allServicesController = AllServicesController.getInstance();
 		totalDIscount=new TotalDiscount();
 	}
 	
@@ -31,5 +31,12 @@ public class DiscountEndPoint {
 		totalDIscount.setOverallDiscount(number, amount/100);
 		
 		return "We Added Overall Discount";
+	}
+	
+	//Maram
+	@GetMapping(value = "/CheckDiscount/{name}") 
+	public String DisplayRefund(@PathVariable("name") String name) {
+		//refundRequestController.displayrefundRequest(refundRequestController.refundRequestList.get(0)); 
+		return allServicesController.CheckDiscountOnService(name);
 	}
 }

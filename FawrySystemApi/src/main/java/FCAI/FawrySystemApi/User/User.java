@@ -25,6 +25,11 @@ public class User {
 	}
 	public User() {}
 	
+	public Wallet getwallet()
+	{
+		return wallet;
+	}
+	
 	public String getUserName()
 	{
 		return userName;
@@ -32,6 +37,14 @@ public class User {
 	public int gettimesOfPay()
 	{
 		return timesOfPay;
+	}
+	public void setrefundRequestState(boolean  refundRequestState)
+	{
+		this.refundRequestState = refundRequestState;
+	}
+	public boolean getrefundRequestState()
+	{
+		return refundRequestState;
 	}
 	public int getID()
 	{
