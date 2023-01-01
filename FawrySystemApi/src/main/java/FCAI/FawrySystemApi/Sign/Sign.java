@@ -9,9 +9,10 @@ import FCAI.FawrySystemApi.User.*;
 @Component
 public class Sign {
 	public Vector<User>users ;
-	
+	public Vector<Admin> admins;
 	public Sign() {
 		users = new Vector<User>();
+		admins = new Vector<Admin>(); 
 		User s=new User("yomna","123","y.com");
 		users.add(s);
 		//System.out.println("0");
@@ -25,8 +26,7 @@ public class Sign {
 		return users;
 	}
 	
-	//maram
-		public Vector<Admin> admins;
+	
 		
 	
 }

@@ -17,7 +17,7 @@ public class HandelPaymentProcess {
 	PaymentHistory paymentHistory;
 	public  HandelPaymentProcess()
 	{
-		transactionProcess=new TransactionProcess();
+		transactionProcess =new TransactionProcess();
 		signController=SignController.getInstance();
 		totalDIscount=new TotalDiscount() ;
 		paymentHistory=PaymentHistory.getInstance();

@@ -11,7 +11,7 @@ public class searchForServise_EP {
 	AllMainServicesControlles all;
 	
 	public searchForServise_EP() {
-		all=AllMainServicesControlles.getInstance();
+		all = AllMainServicesControlles.getInstance();
 	}
 	
 	@PostMapping(value="/searchForService/{serviseName}")

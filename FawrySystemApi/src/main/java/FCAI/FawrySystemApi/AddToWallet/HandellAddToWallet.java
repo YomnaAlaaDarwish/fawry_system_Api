@@ -14,7 +14,7 @@ public class HandellAddToWallet {
 	SignController signController;
 	public HandellAddToWallet()
 	{
-		 walletHistory=new WalletHistory();
+		 walletHistory= WalletHistory.getInstance() ;
 		 //signController=new SignController();
 		 signController=SignController.getInstance();
 	}

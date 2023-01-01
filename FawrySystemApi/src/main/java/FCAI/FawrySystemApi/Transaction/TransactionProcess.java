@@ -10,7 +10,7 @@ public class TransactionProcess {
 	AllServicesController all_service_control;
 	public TransactionProcess() {
 		//all_service_control = new AllServicesController();
-		all_service_control=AllServicesController.getInstance();
+		all_service_control = AllServicesController.getInstance();
 	}
 	public Vector<Service> get_services(){
 		return all_service_control.getAllService();
@@ -35,20 +35,21 @@ public class TransactionProcess {
 	}
 	
 	public void create_payment_method(String type,Wallet wallet,double cost) {
-		if(type=="cash")
+		if(type.equals("cash"))
 			payment=new CashPayment();
-		else if(type=="credit card")
+		else if(type.equals("credit card"))
 			payment=new CreditPayment();
-		else if(type=="wallet")
+		else if(type.equals("Wallet"))
 		{
-			if(wallet !=null)
+			if(wallet !=null) {
 				payment=new WalletPayment(wallet);
-			
+			}
 		}
 			
 		else 
 			payment=new CreditPayment();
 		payment.pay(cost);
+
 			
 	}
 	public boolean handel_transaction(Command c) {

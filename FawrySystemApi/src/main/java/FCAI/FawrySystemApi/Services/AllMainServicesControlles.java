@@ -3,10 +3,12 @@ import java.util.Vector;
 
 public class AllMainServicesControlles {
 	//Vector <AllMainServices>  allMainservices = new Vector();
-	 AllMainServices allMainservices = new AllMainServices();
+	 AllMainServices allMainservices;
 	 
-	 private static AllMainServicesControlles obj;
-	    private AllMainServicesControlles() {}
+	    private static AllMainServicesControlles obj;
+	    private AllMainServicesControlles() {
+	    	allMainservices = AllMainServices.getInstance();
+	    }
 		public static AllMainServicesControlles getInstance()
 	    {
 	        if (obj==null)

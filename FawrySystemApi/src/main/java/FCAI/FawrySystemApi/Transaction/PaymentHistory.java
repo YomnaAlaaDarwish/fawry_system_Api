@@ -8,7 +8,7 @@ public class PaymentHistory {
 	public Vector<TransactionInfo>transactionInfo ;
 
 	private static PaymentHistory obj;
-	public PaymentHistory() {transactionInfo =new Vector<TransactionInfo>();}
+	private PaymentHistory() {transactionInfo =new Vector<TransactionInfo>();}
 	public static PaymentHistory getInstance()
     {
         if (obj==null)

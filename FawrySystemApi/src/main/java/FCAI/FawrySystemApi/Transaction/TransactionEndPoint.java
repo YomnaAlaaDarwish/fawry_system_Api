@@ -8,7 +8,7 @@ import FCAI.FawrySystemApi.Services.*;
 
 @RestController
 public class TransactionEndPoint {
-	HandelPaymentProcess handel=new HandelPaymentProcess();
+	HandelPaymentProcess handel = new HandelPaymentProcess();
 	@GetMapping("/showAllServices")
 	public Vector<Service> showAllServices()
 	{

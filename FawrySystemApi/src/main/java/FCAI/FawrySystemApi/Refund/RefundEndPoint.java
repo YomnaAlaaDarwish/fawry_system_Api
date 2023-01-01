@@ -20,9 +20,9 @@ public class RefundEndPoint {
 	private RefundRequestController refundRequestController;
 	
    
-	public RefundEndPoint(RefundRequestController refundRequestControlle){
+	public RefundEndPoint(){
 		
-		this.refundRequestController = refundRequestControlle;
+		refundRequestController = new RefundRequestController();
 		allServicesController= AllServicesController.getInstance();
 		signController=SignController.getInstance();
 		paymentHistory =PaymentHistory.getInstance();
@@ -34,12 +34,12 @@ public class RefundEndPoint {
 	}
 	
 	//Admin reply refund
-	@PostMapping(value = "/persons/{TID}/{answer}") 
+	@PostMapping(value = "/ReplyRefund/{TID}/{answer}") 
 	public String ReplyRefund(@PathVariable("TID") int TID,@PathVariable boolean answer) {
 		if(!refundRequestController.refundRequestList.isEmpty()) {
 		   Command command;
 		   command = new DeleteTransaction(refundRequestController.refundRequestList.get(0),paymentHistory,refundRequestController,answer);
-	       trans.handel_transaction(command);
+	     //  trans.handel_transaction(command);
 	       if(trans.handel_transaction(command)) {
 				return "The reply done :) ,  And this Transaction deleted from PaymentHistory ";
 			}

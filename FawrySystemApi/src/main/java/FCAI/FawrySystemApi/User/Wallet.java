@@ -9,7 +9,7 @@ public class Wallet {
 	{
 		amount+=x;
 	}
-	public Boolean consumeAmount(double x)
+	public boolean consumeAmount(double x)
 	{
 		System.out.println("commm");
 		if(amount>=x)

@@ -7,22 +7,30 @@ import org.springframework.stereotype.Component;
 @Component
 public class AllServicesController {
 	
+	
     AllService allService = AllService.getInstance();
+    
     //static int i=0;
-    private static AllServicesController obj;
-    private AllServicesController() {intial();}
+    private static AllServicesController obj = null;
+    private AllServicesController()
+    {
+   	    System.out.println("Hi");
+    	intial();
+    	
+    }
 	public static AllServicesController getInstance()
     {
+		System.out.println("jj");
         if (obj==null)
         {
+        	 System.out.println("Hello");
         	 obj = new AllServicesController();
         }
         return obj;
     }
-    public void intial() {//to initialize the system with some service 
-    	//i++;
-//System.out.println("iam i"+i);
-		AllMainServicesControlles allMainServicesControlles= AllMainServicesControlles.getInstance();
+    private void intial() {//to initialize the system with some service 
+        //System.out.println("Hello");
+		AllMainServicesControlles allMainServicesControlles = AllMainServicesControlles.getInstance();
 		Vector<String> v = new Vector();
 		v.add("Your mobile: ");	
 		v.add("amount: ");
@@ -33,7 +41,6 @@ public class AllServicesController {
 				MainServices mainServices1 = new MainServices();
 				
 				mainServices1.setservicename("Mobile recharge services");
-				allMainServicesControlles.AddService(mainServices1);
 				Service s1 = new Service("Vodafone Mobile",50);
 				s1.setProvider(p);
 				AddService(s1);
@@ -53,11 +60,11 @@ public class AllServicesController {
 				s4.setProvider(p);
 				AddService(s4);
 				mainServices1.addService(s4);
+				allMainServicesControlles.AddService(mainServices1);
 				
 			  //  Service2
 				MainServices mainServices2 = new MainServices();
 				mainServices2.setservicename("Internet Payment services");
-				allMainServicesControlles.AddService(mainServices2);
 				Service s5 = new Service("Vodafone Internet",50);
 				s5.setProvider(p);
 				AddService(s5);
@@ -74,11 +81,10 @@ public class AllServicesController {
 				s8.setProvider(p);
 				AddService(s8);
 				mainServices2.addService(s8);
-				
+				allMainServicesControlles.AddService(mainServices2);
 			//  Service3	
 				MainServices mainServices3 = new MainServices();
 				mainServices3.setservicename("Landline services");
-				allMainServicesControlles.AddService(mainServices3);
 				Service s9 = new Service("Monthly receipt",200);
 				s9.setProvider(p);
 				AddService(s9);
@@ -87,11 +93,10 @@ public class AllServicesController {
 				s10.setProvider(p);
 				AddService(s10);
 				mainServices3.addService(s10);
-				
+				allMainServicesControlles.AddService(mainServices3);
 			//  Service4	
 				MainServices mainServices4 = new MainServices();
 				mainServices4.setservicename("Donations");
-				allMainServicesControlles.AddService(mainServices4);
 				Service s11 = new Service("Cancer Hospital",10);
 				s11.setProvider(p);
 				AddService(s11);
@@ -105,6 +110,7 @@ public class AllServicesController {
 				s13.setProvider(p);
 				AddService(s13);
 				mainServices4.addService(s13);
+				allMainServicesControlles.AddService(mainServices4);
     }
 	
 	public Service search(String str){

@@ -12,7 +12,7 @@ public class Admin {
 	
 	static int SId;
 	static {
-		SId = 1;
+		SId = 100;
 	}
 	
 	RefundRequestController refundRequestController;

@@ -77,6 +77,20 @@ public class SignController {
 		}
 		return null;
 	}
+	
+	public Admin searchAdmin(int id) {
+		if(sign.admins != null ) 
+		{
+			for(int i=0;i< sign.admins.size();i++)
+			{
+				if(sign.admins.get(i).getID() == id)
+				{
+					return sign.admins.get(i);
+				}
+			}
+		}
+		return null;
+	}
 	////
 	public boolean checkLogIn(int id)
 	{
@@ -110,6 +124,8 @@ public class SignController {
 		}
 		return null;
 	}
+	
+	
     public User signUp(String userName,String password,String email ) {
 		User newUser = new User(userName,password,email);
 		sign.users.addElement(newUser);
