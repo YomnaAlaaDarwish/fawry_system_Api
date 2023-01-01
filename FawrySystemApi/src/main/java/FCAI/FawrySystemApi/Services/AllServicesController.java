@@ -10,7 +10,7 @@ public class AllServicesController {
     AllService allService = AllService.getInstance();
     //static int i=0;
     private static AllServicesController obj;
-    public AllServicesController() {}
+    private AllServicesController() {intial();}
 	public static AllServicesController getInstance()
     {
         if (obj==null)
@@ -22,7 +22,7 @@ public class AllServicesController {
     public void intial() {//to initialize the system with some service 
     	//i++;
 //System.out.println("iam i"+i);
-		AllMainServicesControlles allMainServicesControlles=new AllMainServicesControlles();
+		AllMainServicesControlles allMainServicesControlles= AllMainServicesControlles.getInstance();
 		Vector<String> v = new Vector();
 		v.add("Your mobile: ");	
 		v.add("amount: ");

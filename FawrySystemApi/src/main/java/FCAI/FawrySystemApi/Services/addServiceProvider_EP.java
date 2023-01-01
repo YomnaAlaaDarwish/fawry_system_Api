@@ -17,25 +17,16 @@ import FCAI.FawrySystemApi.Admin.Admin;
 
 @RestController
 public class addServiceProvider_EP {
-	static AllServicesController allServicesController=new AllServicesController();
 	
+	  AllServicesController allServicesController;
 	
-	@GetMapping(value="/search/{str}")
-	public static Service searchForService(@PathVariable("str")String str) {
-		Service test = new Service("orange",50);
-		allServicesController.AddService(test);
-		Service service;
-	    service = allServicesController.search(str);
-	    return service;
+	public addServiceProvider_EP() {
+		allServicesController=AllServicesController.getInstance();
 	}
-			
-
 	
 	@PostMapping(value="/providers/{str}")
-	public static String addServiceProvider(@RequestBody Provider provider,@PathVariable("str")String str) {
+	public String addServiceProvider(@RequestBody Provider provider,@PathVariable("str")String str) {
 		Service service;
-		Service test = new Service("orange",50);
-		allServicesController.AddService(test);
 	    service = allServicesController.search(str);
 		if(service==null)
 			return "service not found";

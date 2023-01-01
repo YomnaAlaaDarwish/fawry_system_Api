@@ -4,7 +4,17 @@ import java.util.Vector;
 public class AllMainServicesControlles {
 	//Vector <AllMainServices>  allMainservices = new Vector();
 	 AllMainServices allMainservices = new AllMainServices();
-	
+	 
+	 private static AllMainServicesControlles obj;
+	    private AllMainServicesControlles() {}
+		public static AllMainServicesControlles getInstance()
+	    {
+	        if (obj==null)
+	        {
+	        	 obj = new AllMainServicesControlles();
+	        }
+	        return obj;
+	    }
      public Vector<Service> search(String mainservice){
     	 
     	Vector<Service>services = new Vector();

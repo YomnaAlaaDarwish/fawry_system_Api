@@ -1,10 +1,12 @@
 package FCAI.FawrySystemApi.Transaction;
 import java.util.*;
 
+//import org.springframework.stereotype.Component;
+//@Component
 public class PaymentHistory {
 	public Vector<TransactionInfo>transactionInfo ;
 	private static PaymentHistory obj;
-	private PaymentHistory() {transactionInfo =new Vector<TransactionInfo>();}
+	public PaymentHistory() {transactionInfo =new Vector<TransactionInfo>();}
 	public static PaymentHistory getInstance()
     {
         if (obj==null)
