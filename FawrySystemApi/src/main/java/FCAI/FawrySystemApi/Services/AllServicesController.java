@@ -8,28 +8,23 @@ import org.springframework.stereotype.Component;
 public class AllServicesController {
 	
 	
-    AllService allService = AllService.getInstance();
+   static AllService allService = AllService.getInstance();
     
     //static int i=0;
     private static AllServicesController obj = null;
-    private AllServicesController()
-    {
-   	    System.out.println("Hi");
-    	intial();
-    	
-    }
+   private AllServicesController()
+    {}
 	public static AllServicesController getInstance()
     {
-		System.out.println("jj");
         if (obj==null)
         {
-        	 System.out.println("Hello");
         	 obj = new AllServicesController();
+        	 intial();
         }
         return obj;
     }
-    private void intial() {//to initialize the system with some service 
-        //System.out.println("Hello");
+    private static void intial() {//to initialize the system with some service 
+        
 		AllMainServicesControlles allMainServicesControlles = AllMainServicesControlles.getInstance();
 		Vector<String> v = new Vector();
 		v.add("Your mobile: ");	
@@ -124,14 +119,13 @@ public class AllServicesController {
 		}
 		return s;
 	}
-	public void AddService(Service s){
+	public static void AddService(Service s){
 		allService.services.add(s);
 	}
 	public Vector<Service> getAllService()
 	{
 		return allService.services;
 	}
-	/// Maram
 	public String CheckDiscountOnService(String name) {
 		Service s = search(name);
 		if(s != null) {

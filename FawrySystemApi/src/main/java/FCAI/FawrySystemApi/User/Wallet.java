@@ -3,7 +3,7 @@ public class Wallet {
 	double amount;
 	public Wallet()
 	{
-		amount=20;
+		amount=0;
 	}
 	public void addAmount(double x)
 	{
@@ -11,7 +11,6 @@ public class Wallet {
 	}
 	public boolean consumeAmount(double x)
 	{
-		System.out.println("commm");
 		if(amount>=x)
 		{
 			amount-=x;

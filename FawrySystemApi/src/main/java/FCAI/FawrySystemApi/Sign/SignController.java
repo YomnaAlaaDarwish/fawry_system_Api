@@ -12,7 +12,6 @@ public class SignController {
 	Sign sign ;
 	Vector<Integer>LoginUsersId;
 	Vector<Integer>LoginAdminId;
-	//Vector<User>users = new ;
 	private static SignController obj;
 	public SignController() 
 	{
@@ -31,13 +30,10 @@ public class SignController {
 	public User signIn(String userName,String password) {
 		User user;
 		user =search(userName,password);
-		//System.out.println("id"+user.getID());
 		if(user!=null)
 		{
-			//System.out.println("befor"+LoginUsersId.size());
 			if(!checkLogIn(user.getID()))
 				LoginUsersId .add(user.getID());
-			//System.out.println("aft"+LoginUsersId.size());
 		}
 			
 		return user;
@@ -94,10 +90,8 @@ public class SignController {
 	////
 	public boolean checkLogIn(int id)
 	{
-		//System.out.println("ch"+LoginUsersId.size());
 		for(int i=0;i<LoginUsersId.size();i++)
 		{
-			//System.out.println("for"+id+" "+LoginUsersId.get(i));
 			if(LoginUsersId.get(i)==id)
 				return true;
 				
@@ -106,18 +100,13 @@ public class SignController {
 	}
 
 	public User search(String userName,String password) {
-		//System.out.println(sign.users.size());
 		if(sign.users != null ) 
 		{
-			//System.out.println("1");
 			for(int i=0;i< sign.users.size();i++)
 			{
-				//System.out.println(sign.users.get(i).getUserName()+" "+sign.users.get(i).getPassword()+" "+userName+" "+password);
-			
+				
 				if(sign.users.get(i).getUserName().equals(userName) && sign.users.get(i).getPassword().equals(password))
 				{
-					//System.out.println("2");
-					//System.out.println(sign.users.get(i).getUserName() + sign.users.get(i).getPassword());
 					return sign.users.get(i);
 				}
 			}
@@ -130,7 +119,6 @@ public class SignController {
 		User newUser = new User(userName,password,email);
 		sign.users.addElement(newUser);
 		LoginUsersId .add(newUser.getID());
-		//users.addElement(newUser);
 		return newUser;
 	}
     

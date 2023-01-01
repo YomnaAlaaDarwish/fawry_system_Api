@@ -13,21 +13,15 @@ import FCAI.FawrySystemApi.Sign.SignController;
 public class DisplayWalletTransactionEndPoint {
 	WalletHistory w;
 	SignController signController;
-	Vector<WalletTransaction> allhistory;
+	
 	public DisplayWalletTransactionEndPoint() {
 	    w = WalletHistory.getInstance();
 	    signController=SignController.getInstance();
 	}
 	@GetMapping("/displayWallet/{ID}")
 	public Vector<WalletTransaction> displayWallet(@PathVariable("ID") int ID){
-		//if(signController.checkLogInAdmin(ID)) {
-			allhistory = w.getAllhistory();
-			return allhistory;
-		/*}
-		else {
-				
-		}*/
-		
+		Vector<WalletTransaction> allhistory = w.getAllhistory();
+		return allhistory;
 	}
 	
 }

@@ -13,20 +13,14 @@ public class Sign {
 	public Sign() {
 		users = new Vector<User>();
 		admins = new Vector<Admin>(); 
-		User s=new User("yomna","123","y.com");
+		User s=new User("yomna","123","y.com");//initial user
 		users.add(s);
-		//System.out.println("0");
-		
-		//maram
 		admins = new Vector<Admin>();
-		Admin admin =new Admin("HassanMourad","7856924");
+		Admin admin =new Admin("HassanMourad","7856924");//initial admin
 		admins.add(admin);
 	}
 	public Vector<User> getAllUsers(){
 		return users;
-	}
-	
-	
-		
+	}	
 	
 }

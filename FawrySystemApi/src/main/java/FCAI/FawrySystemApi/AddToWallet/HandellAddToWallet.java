@@ -15,7 +15,6 @@ public class HandellAddToWallet {
 	public HandellAddToWallet()
 	{
 		 walletHistory= WalletHistory.getInstance() ;
-		 //signController=new SignController();
 		 signController=SignController.getInstance();
 	}
 	public String addWalletTransaction(int id,double x)
@@ -23,7 +22,6 @@ public class HandellAddToWallet {
 		if(x<=0)
 			return "You can not add 0 or negative value";
 		boolean loged=signController.checkLogIn(id);
-		//System.out.println(loged);
 		if(loged)
 		{
 			System.out.println("i reach");

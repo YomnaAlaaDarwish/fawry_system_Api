@@ -3,7 +3,7 @@ package FCAI.FawrySystemApi.AddToWallet;
 import FCAI.FawrySystemApi.User.User;
 
 public class WalletTransaction {
-    
+    //@AutoWired
 	User user;
 	double amount;
 	public WalletTransaction(User u,double x)
@@ -13,3 +13,4 @@ public class WalletTransaction {
 		amount=x;
 	}
 }
+//

@@ -59,7 +59,6 @@ public class RefundRequestController {
 	
 	 public boolean remove_refund_request(TransactionInfo transinfo , boolean reply) {
 		 int UserID = transinfo.getUserID();
-    	  //UserID = refundrequest.refundRequestList.firstElement().userID;
     	  
           for(int i =0; i < signController.getsign().users.size() ;i++) {
         	   if(signController.getsign().users.get(i).getID() == UserID) {
@@ -94,18 +93,9 @@ public class RefundRequestController {
 						 "providername : " + refundRequestList.get(0).getProvidername() + "\n" +
 						 "paymentmethod : " + refundRequestList.get(0).getpaymentmethod() + "\n" +
 						 "payamount : " +refundRequestList.get(0).getpayamount() + "\n" ;
-						 
-				/* System.out.println("userID : " + refundRequestList.get(0).getUserID());
-				 System.out.println("servicename : " + refundRequestList.get(0).getServicename());
-				 System.out.println("providername : " + refundRequestList.get(0).getProvidername());
-				 System.out.println("paymentmethod : " + refundRequestList.get(0).getpaymentmethod());
-				 System.out.println("payamount : " +refundRequestList.get(0).getpayamount());
-				 
-				 */
 				 Service service = allServicesController.search(refundRequestList.get(0).getServicename());
 				 provider = trans.choose_Provider(refundRequestList.get(0).getProvidername(),service);
 				 for(int i=0;i < provider.getForm().size();i++) {
-				    //System.out.println(i + 1+ " - " + provider.getform().get(i) + " : " + refundRequestList.get(0).getAnswer().get(i));
 				    s2 += (i + 1+ " - " + provider.getForm().get(i) + " : " + refundRequestList.get(0).getAnswer().get(i))+ "\t";
 			     }
 				 return s1 + s2;

@@ -2,9 +2,9 @@ package FCAI.FawrySystemApi.Services;
 import java.util.*;
 
 public class AllService {
-	Vector<Service>services = new Vector();
+	Vector<Service>services ;
 	private static AllService obj;
-	private AllService() {}
+	private AllService() {services = new Vector<Service>();}
 	public static AllService getInstance()
     {
         if (obj==null)

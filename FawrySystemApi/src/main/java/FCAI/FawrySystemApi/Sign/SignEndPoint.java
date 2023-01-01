@@ -11,7 +11,6 @@ public class SignEndPoint {
 	
 	public  SignEndPoint() 
 	{
-		 //signController=new SignController();
 		signController = SignController.getInstance();
 	}
 	@GetMapping("/signin/{UserName}/{password}")

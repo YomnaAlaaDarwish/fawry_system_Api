@@ -35,9 +35,9 @@ public class TransactionProcess {
 	}
 	
 	public void create_payment_method(String type,Wallet wallet,double cost) {
-		if(type.equals("cash"))
+		if(type.equals("Cash"))
 			payment=new CashPayment();
-		else if(type.equals("credit card"))
+		else if(type.equals("Credit Card"))
 			payment=new CreditPayment();
 		else if(type.equals("Wallet"))
 		{

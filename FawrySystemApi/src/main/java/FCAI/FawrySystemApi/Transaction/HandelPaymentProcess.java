@@ -86,14 +86,12 @@ public class HandelPaymentProcess {
 			 return str;
 		 }
 		 transactionProcess.create_payment_method(method , user.getWallet(),cost);
-		//TransactionInfo transinfo=transactionProcess.set_transaction_info(id,service,provider,method,cost,answer);
 		 TransactionInfo transinfo=new TransactionInfo  (id,service,provider,method,cost,answer);
 		 str.add("this is your Transaction id you will need it if you want to refund : "+transinfo.TID);
 			 
 			 Command command = new AddTransaction(transinfo,paymentHistory);
 			 transactionProcess.handel_transaction(command);
 			 user.increaseTimesOfPay();
-			 //System.out.println(paymentHistory.transactionInfo.get(0).servicename);
 			 str.add(" ****Congratulation you have finished the payment process**** ");
 		 
 		return str;

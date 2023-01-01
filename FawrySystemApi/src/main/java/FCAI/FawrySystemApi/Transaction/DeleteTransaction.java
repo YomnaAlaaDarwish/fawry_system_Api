@@ -16,15 +16,8 @@ public class DeleteTransaction implements Command {
 		
 	}
      
-	/*public void setInfo(TransactionInfo trans, boolean reply ) {
-		this.transinfo=trans;
-		this.reply = reply;
-	}*/
 	@Override
 	public boolean execute() {
-		
-		//payHist.removeTrancation(transinfo);
-		//refundRequestController.remove_refund_request(transinfo,reply);
 		if(payHist.removeTrancation(transinfo) && refundRequestController.remove_refund_request(transinfo,reply)) {
 			return true;
 		}

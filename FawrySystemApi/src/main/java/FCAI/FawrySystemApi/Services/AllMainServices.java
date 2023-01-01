@@ -2,7 +2,7 @@ package FCAI.FawrySystemApi.Services;
 import java.util.Vector;
 
 public class AllMainServices {
-	Vector <MainServices>  mainservices = new Vector();
+	Vector <MainServices>  mainservices = new Vector<MainServices>();
 	
     private static AllMainServices obj;
     private AllMainServices() {}
