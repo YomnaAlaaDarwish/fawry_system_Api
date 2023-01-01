@@ -14,7 +14,7 @@ public class SignController {
 	Vector<Integer>LoginAdminId;
 	//Vector<User>users = new ;
 	private static SignController obj;
-	private SignController() 
+	public SignController() 
 	{
 		sign = new Sign();
 		LoginUsersId = new Vector<Integer> ();
@@ -130,7 +130,19 @@ public class SignController {
 		}
     	return null;
     }
+
     public Sign getsign(){
 		return sign;
 	}
+    public boolean logout(int id)
+    {
+    	User s=searchById(id);
+    	if(s!=null)
+    	{
+    		LoginUsersId.removeElement(id);
+    		return true;
+    	}
+    	return false;
+    }
+    
 }

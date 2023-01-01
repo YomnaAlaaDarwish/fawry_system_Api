@@ -1,6 +1,7 @@
 package FCAI.FawrySystemApi.Refund;
 import java.util.Vector;
 
+
 import org.springframework.stereotype.Component;
 
 import FCAI.FawrySystemApi.Services.AllServicesController;
@@ -12,7 +13,6 @@ import FCAI.FawrySystemApi.Transaction.TransactionInfo;
 import FCAI.FawrySystemApi.Transaction.TransactionProcess;
 import FCAI.FawrySystemApi.User.User;
  
-@Component 
 public class RefundRequestController {
 	 
 	Provider provider;
@@ -104,9 +104,9 @@ public class RefundRequestController {
 				 */
 				 Service service = allServicesController.search(refundRequestList.get(0).getServicename());
 				 provider = trans.choose_Provider(refundRequestList.get(0).getProvidername(),service);
-				 for(int i=0;i < provider.getform().size();i++) {
+				 for(int i=0;i < provider.getForm().size();i++) {
 				    //System.out.println(i + 1+ " - " + provider.getform().get(i) + " : " + refundRequestList.get(0).getAnswer().get(i));
-				    s2 += (i + 1+ " - " + provider.getform().get(i) + " : " + refundRequestList.get(0).getAnswer().get(i))+ "\t";
+				    s2 += (i + 1+ " - " + provider.getForm().get(i) + " : " + refundRequestList.get(0).getAnswer().get(i))+ "\t";
 			     }
 				 return s1 + s2;
 	  	

@@ -27,6 +27,9 @@ public class Admin {
 		Id =SId;
 		SId++;
 	}
+	public Admin() {
+	
+	}
 	public int getID()
 	{
 		return Id;

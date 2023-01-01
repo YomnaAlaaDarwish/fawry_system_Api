@@ -2,13 +2,15 @@ package FCAI.FawrySystemApi.Services;
 
 import java.util.Vector;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class AllServicesController {
 	
     AllService allService = AllService.getInstance();
     //static int i=0;
     private static AllServicesController obj;
-	private AllServicesController() {intial();}
+    public AllServicesController() {}
 	public static AllServicesController getInstance()
     {
         if (obj==null)

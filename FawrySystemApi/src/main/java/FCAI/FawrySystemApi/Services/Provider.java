@@ -22,9 +22,10 @@ public class Provider {
 	public boolean checkCash() {
 		return accept_cash;
 	}
-	public Vector<String> getform(){
+
+	public Vector<String> getForm()
+	{
 		return form;
 	}
-	
 
 }

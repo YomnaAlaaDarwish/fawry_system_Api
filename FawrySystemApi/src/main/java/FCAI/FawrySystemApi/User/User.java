@@ -85,7 +85,10 @@ public class User {
 	public void addToWallet(double funds) {
 		wallet.addAmount(funds);;
 	}
-
+	public Wallet getWallet()
+	{
+		return wallet;
+	}
 
 }
 

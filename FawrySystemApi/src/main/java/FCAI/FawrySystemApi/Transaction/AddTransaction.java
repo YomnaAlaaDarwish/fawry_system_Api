@@ -13,8 +13,9 @@ public class AddTransaction implements Command {
 	@Override
 	public boolean execute() {
 		// 
-		payHist.addTrancation(transinfo);
+		//payHist.addTrancation(transinfo);
 		if(payHist.addTrancation(transinfo)) {
+			System.out.println(payHist.transactionInfo.size());
 			return true;
 		}
 		return false;
