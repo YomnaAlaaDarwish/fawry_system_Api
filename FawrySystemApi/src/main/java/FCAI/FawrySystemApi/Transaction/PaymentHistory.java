@@ -4,7 +4,9 @@ import java.util.*;
 //import org.springframework.stereotype.Component;
 //@Component
 public class PaymentHistory {
+
 	public Vector<TransactionInfo>transactionInfo ;
+
 	private static PaymentHistory obj;
 	public PaymentHistory() {transactionInfo =new Vector<TransactionInfo>();}
 	public static PaymentHistory getInstance()
@@ -25,7 +27,10 @@ public class PaymentHistory {
 		return transactionInfo.remove(trans);
 	}
 	
-	
+	public Vector <TransactionInfo> getVectorTransactionInfo()
+    {
+        return transactionInfo;
+    }
 	
 	
 }

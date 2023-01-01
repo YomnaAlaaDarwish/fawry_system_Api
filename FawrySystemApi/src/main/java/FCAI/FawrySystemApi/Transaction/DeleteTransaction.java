@@ -22,15 +22,17 @@ public class DeleteTransaction implements Command {
 	}*/
 	@Override
 	public boolean execute() {
-		// 
+		
 		payHist.removeTrancation(transinfo);
 		refundRequestController.remove_refund_request(transinfo,reply);
 		if(payHist.removeTrancation(transinfo) &&refundRequestController.remove_refund_request(transinfo,reply)) {
 			return true;
 		}
 		return false;
-		}
+		
 		
 	}
+		
+}
 
 

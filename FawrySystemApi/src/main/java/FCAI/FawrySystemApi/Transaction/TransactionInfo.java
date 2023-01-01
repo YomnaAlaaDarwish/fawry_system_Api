@@ -25,5 +25,31 @@ public class TransactionInfo {
 		TID = id;
 		id++;
 	}
-	
+	public String  getProvidername()
+    {
+        return providername;
+    }
+	public String  getServicename()
+    {
+        return servicename;
+    }
+	public int  getUserID()
+    {
+        return userID;
+    }
+	public int  getTID()
+    {
+        return TID;
+    }
+	public String  getpaymentmethod()
+    {
+        return paymentmethod;
+    }
+	public double  getpayamount()
+    {
+        return payamount;
+    }
+	public Vector<String> getAnswer(){
+		return answer;
+	}
 }

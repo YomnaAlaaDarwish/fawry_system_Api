@@ -31,7 +31,7 @@ public class addServiceProvider_EP {
 		if(service==null)
 			return "service not found";
 		
-	    Admin admin=new Admin();
+	    Admin admin= new Admin();
 	    admin.addServiceProvider(service,provider.name,provider.form,provider.accept_cash);
 
 		return "add successfully";

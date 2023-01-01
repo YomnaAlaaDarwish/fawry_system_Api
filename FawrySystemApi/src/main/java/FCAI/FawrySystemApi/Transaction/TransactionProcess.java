@@ -51,9 +51,9 @@ public class TransactionProcess {
 		payment.pay(cost);
 			
 	}
-	public void handel_transaction(Command c) {
+	public boolean handel_transaction(Command c) {
 		
-		c.execute();
+		return c.execute();
 			
 	}
 	

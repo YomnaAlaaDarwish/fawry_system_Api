@@ -32,4 +32,11 @@ public class DiscountEndPoint {
 		
 		return "We Added Overall Discount";
 	}
+	
+	//Maram
+	@GetMapping(value = "/CheckDiscount/{name}") 
+	public String DisplayRefund(@PathVariable("name") String name) {
+		//refundRequestController.displayrefundRequest(refundRequestController.refundRequestList.get(0)); 
+		return allServicesController.CheckDiscountOnService(name);
+	}
 }
