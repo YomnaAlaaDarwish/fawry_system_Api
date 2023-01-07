@@ -7,3 +7,6 @@ path it in the url to know if yor are logged in and check you are admin to do yo
 
 
 **we assume that vodafon cash as the only provider each service have just for initial **
+
+the postman link
+https://www.postman.com/material-astronomer-96952345/workspace/fawrysystem
